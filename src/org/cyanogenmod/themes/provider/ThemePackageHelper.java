@@ -35,8 +35,7 @@ import android.provider.ThemesContract.MixnMatchColumns;
 import android.provider.ThemesContract.ThemesColumns;
 import android.provider.ThemesContract.ThemesColumns.InstallState;
 import android.util.Log;
-
-import org.cyanogenmod.internal.util.CmLockPatternUtils;
+import com.android.internal.widget.LockPatternUtils;
 import org.cyanogenmod.themes.provider.util.ProviderUtils;
 
 import java.io.IOException;
@@ -390,7 +389,7 @@ public class ThemePackageHelper {
             }
         }
 
-        CmLockPatternUtils lockPatternUtils = new CmLockPatternUtils(context);
+        LockPatternUtils lockPatternUtils = new LockPatternUtils(context);
         if (lockPatternUtils.isThirdPartyKeyguardEnabled()) {
             String[] projection = {MixnMatchColumns.COL_VALUE};
             String selection = MixnMatchColumns.COL_KEY + "=?";
